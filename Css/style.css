@@ -1,0 +1,661 @@
+body {
+	font-family: 'Raleway', sans-serif;
+
+    /* Car, selon la maquette du designer, il faut que le footer vienne "taper" le bas de page ! */
+    margin: 30px 30px 0 30px;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+input {
+    padding-left: 20px;
+}
+
+input::placeholder {
+    color: #000000;
+    opacity: 0.4;
+}
+
+fieldset {
+    border: none;
+}
+
+.textNoFullWidht {
+    max-width: 80%;
+}
+.flexHorizontal {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.flexVertical {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.flexSpaceBetween {
+    justify-content: space-between;
+}
+
+.flexSpaceAround {
+    justify-content: space-around;
+}
+
+.flexStart {
+    align-items: flex-start;
+}
+
+.flexGap {
+    gap: 0px 35px;
+}
+
+.flexVerticalGap {
+    gap: 35px 0px;
+}
+
+.flexLowGap {
+    gap: 0px 15px;
+}
+
+.flexWrap {
+    flex-wrap: wrap;
+}
+
+.textNav {
+    color: #000000;
+    background: white;
+    border-top: solid transparent 2px #0065FC;
+
+    /** Empêche le "saut" provoqué par la border ! **/
+    padding-top: 15px; 
+}
+
+.textNav:hover {
+    color: #0065FC;
+    border-top: solid 2px #0065FC;
+    height: 10px;
+
+    /** Empêche le "saut" provoqué par la border ! **/
+    margin-top: -15px; 
+}
+
+.paddingLowLateral {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+
+.flexMiddleGap {
+    gap: 20px;
+}
+
+.textWhite {
+    color: #FFFFFF;
+}
+
+.lowEMTitle {
+    font-size: 1.25em;
+}
+
+.researchTextSize {
+    font-weight: 700;
+    font-size: 18px;
+}
+
+.researchIcone {      
+    border: 1px solid #F2F2F2;
+    border-radius: 15px 0px 0px 15px;
+    background-color: #F2F2F2;
+
+    min-width: 50px;
+    min-height: 50px;
+    
+    line-height: 50px;
+    text-align: center;
+
+    /** Requis pour avoir une border autour du researchInput ! **/
+    height: 48px;
+}
+
+.researchInput {
+    text-decoration: none;
+    border: none;
+
+    text-align: center;
+
+    color: #000000;
+    border: 1px solid #F2F2F2;   
+
+    /** Doit match avec celle de researchIcone pour avoir une border d'1px autour ! **/
+    height: 48px;
+}
+
+.researchButton {
+    background: #0065FC;
+    border: 1px solid #0065FC;
+    border-radius: 0px 15px 15px 0px;
+
+    line-height: 14px;
+    width: 130px;
+    height: 52px;
+
+    padding-right: 120px;
+    padding-left: 15px;
+}
+
+.iconeBlue {
+    color: #0065FC;
+}
+
+.paragrapheDrop {
+    margin-bottom: 40px;
+}
+
+/** Masque la "box" du checkbox ! **/
+.customCheckbox input[type="checkbox"] {
+    display: none;
+}
+
+/** Colore l'icone une fois checked ! **/
+.customCheckbox input[type="checkbox"]:checked ~ .filterChecked {
+    color: indigo;
+}
+
+.filterButton {
+    background: #FFFFFF;
+    border: 2px solid #D9D9D9;
+    border-radius: 25px;
+    
+    font-weight: bold;
+    padding-right: 15px;
+
+    margin-top: 10px;
+}
+
+.iconeInfo {
+    text-align: center; 
+
+    width: 15px;
+    height: 15px;
+
+    border: 1px solid #D9D9D9;
+    border-radius: 50%;
+    padding: 5px 5px;
+
+    /** line-height : 0%; est une piste de solution pour centrer l'element mais - **/ 
+    /** Pour aller dans une valeur négative, j'ai trouvé ceci à la place : **/
+    display: block; 
+    line-height: 1.2;
+
+    /** Pour réduire ensuite la taille de l'icone, utiliser un font-size car c'est du texte pour la machine. **/
+    font-size: 0.8em;
+}
+
+.justifyContent {
+    justify-content: center;
+}
+
+.mainContainerCommun {
+    border-radius: 25px;
+    background-color: #F2F2F2;
+
+    height: 720px;
+
+    padding: 10px;
+    overflow: hidden;
+}
+
+.hostingPictureCard {
+    margin: 0px 15px 30px 15px;
+
+    box-sizing: border-box;
+    width: 28%;
+    height: 250px;
+}
+
+.hostingPictureText {
+    font-size: 0.9em;
+    line-height: 0.4;
+    padding-left: 10px;
+
+    position: relative;
+    bottom: 5px;
+}
+
+.hostingPictureBox {
+    box-sizing: border-box;
+    width: 100%;
+    height: 180px;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+}
+
+.hostingPicture {
+    /** "rogne" l'image dans le cadre donné sans la déformer, correspond au rendu de la maquette ! **/
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+}
+
+.asidePictureCard {
+    box-sizing: border-box;
+    width: 100%;
+    min-height: 33%;
+    max-height: 33%;
+    align-self: center;
+}
+
+.asidePicture {
+    /** "rogne" l'image dans le cadre donné sans la déformer, correspond au rendu de la maquette ! **/
+    object-fit:cover;
+    width: 100%;
+    height: 100%;
+}
+
+.asidePictureBox {
+    box-sizing: border-box;
+
+    /** Sinon les images se déforment, pourquoi ? **/
+    min-width: 140px;
+    width: 140px;
+    max-width: 140px;
+
+    height: 100%;
+    border-radius: 20px 0px 0px 20px;
+    overflow: hidden;
+}
+
+.asidePictureText {
+    line-height: 0.8;
+    padding-left: 10px;
+
+    /** Les 2% restant sont alloué à starAside car le margin-auto n'a pas fonctionné !! **/
+    /** C'est une triche mais c'est également une façon au demeurant viable de faire parceque "responsive friendly". **/
+
+    height: 98%;
+}
+
+.hostingTitle {
+    margin-left: 30px;
+}
+
+.activityCard  {
+    box-sizing: border-box;
+    width: 20%;
+    height: 440px;
+
+    overflow: hidden;
+}
+
+.activityPicture {
+    border-radius: 20px 20px 0px 0px;
+
+    object-fit:cover;
+    width: 100%;
+    height: 380px;
+}
+
+.activityText {
+    margin-left: 15px;
+    font-size: 1em;
+}
+
+.cardShadowWhite {
+    background: #FFFFFF;
+    border: 5px solid #FFFFFF;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px #D9D9D9;
+ }
+
+ .cardShadowWhite:hover {
+    background: #D9D9D9;
+    border: 5px solid #D9D9D9;
+    border-radius: 20px;
+    box-shadow: 4px 4px 4px #D9D9D9;
+ }
+
+
+ .footerText {
+    line-height: 0.5em;
+ }
+
+ .starAside {
+    align-self: start;
+ }
+
+.fa-magnifying-glass {
+    display: none;
+ }
+
+/** ID - Ajustements ponctuels et éléments principaux ! **/
+
+#bookiLogo {
+    width: 5%;
+    min-width: 80px;
+}
+
+#navMenu {
+    /* Commande magique pour que le contenu se préserve au grossissement (ctrl + scroll) ! */
+    max-width: fit-content;
+    width: 15%;
+    min-width: 300px;
+    font-size: 1.2em;
+}
+
+#hostingMenu {
+    min-width: 880px;
+    width: 65%;
+}
+
+#moreContent {
+    font-size: 0.9em;
+    position: relative;
+    top: 20px;
+}
+
+#asideMenu {
+    min-width: 340px;
+    width: 28%;
+    align-items: center;
+}
+
+#chartLogo {
+    font-size: 1.5em;
+}
+
+#asideTitle {
+    /* Dimension des asideCards ! */
+    width: 455px;
+    max-width: 100%;
+}
+
+#activityMenu {
+    /** !! Hauteur comprenant le margin-top de décalage avec les hostingMenu/asideMenu !! */
+    height: 560px;
+
+    margin: 50px 70px 40px 50px;
+    gap: 15px;
+    
+    overflow: hidden;
+}
+
+#footerMenu {
+    background-color: #F2F2F2;
+
+    min-width: 1337px;
+    width: 100%;
+    max-width: 1920px;
+    
+    height: 200px;
+
+    /* Aligne les box en "haut" et décale cette hauteur de 50px vers le bas ! */
+    align-items: baseline;
+    padding-top: 40px;
+}
+
+#fortPomegues {
+    /* Solution de "triche" car la classe "activityPicture" ne fonctionne pas sur CETTE image en particulier (résolution ?)... */
+    /* Résultat identique niveau disposition et résistance à l'étirement du site MAIS l'image se retrouve mal cadrée... */
+    width: 600px;
+    height: 380px;
+}
+
+/* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    - - -                                                          !! QUERY MOBILE !!                                                         - - - 
+                                                                
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
+
+/* Non plus rangé par catégorie (class/id) mais chronologiquement selon l'avancée du projet */
+
+@media screen and (max-width: 768px) {
+
+    button {
+        text-align: center;
+    }
+
+    button p {
+        display: none;
+    }
+
+    #headerMenu {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        min-height: 120px;
+    }
+
+    /* Grossissement du logo visible entre la version desktop et mobile ! */
+    #bookiLogo {
+        min-width: 120px;
+        width: 20%;
+    }
+
+    #navMenu {
+        min-width: 100%;
+    }
+
+    #formTrailerText {
+        font-size: 1.2em;
+    }
+
+    .textNav {
+
+        /* Retire la bordure du haut présente sur le Desktop ! */
+        border: none;
+
+        /* Nouvelle bordure ! */
+        color: #000000;
+        border-bottom: solid transparent 2px #0065FC;
+        width: 100%;
+        margin-top: 45px;
+        padding-bottom: 40px; 
+        text-align: center;
+    }
+    
+    .textNav:hover {
+        border: none;
+        color: #0065FC;
+        border-bottom: solid 2px #0065FC;
+
+        /* Margin en rapport à celui de la classe du dessus pour empêcher le "saut" au survol ! */
+        margin-top: 30px;
+    }
+
+    .fa-magnifying-glass {
+        display:inline-block;
+     }
+
+     .researchIcone {
+        /** Requis pour avoir une border autour du researchInput ! **/
+        height: 60px;
+        width: 12.5%;
+     }
+
+     .researchButton {
+        /* Il y avait un padding qui empêchait de centrer... */
+        padding-right: 0px;
+        padding-left: 0px;
+        height: 61px;
+        max-width: 45%;
+     }
+
+     .researchInput {
+        text-align: start;
+        height: 58px;
+     }
+
+     .researchTextSize {
+        font-weight: 700;
+        font-size: 0.8em;
+    }
+
+     #searchingMenu {
+        width: 90%;
+        justify-content: center;
+        font-size: 2em;
+    }
+
+    #filterMenu {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .iconeInfo {
+        text-align: center;
+    
+        width: 22px;
+        height: 22px;
+
+        padding-right: 5px;
+    }
+    
+    #mainMenu {
+        flex-direction: column-reverse;
+    }
+
+    #hostingMenu {
+        flex-direction: column;
+        min-width: fit-content;
+        height: auto;
+        padding-bottom: 20px;
+        background-color: #FFFFFF;
+        width: 90%;
+    }
+
+    .hostingPictureCard {
+        width: 100%;
+
+        /* Leger étirement voué à acceuillir le mobileFontGrow du text ! */
+        height: 330px;
+    }
+
+    .hostingPictureBox {
+        height: 200px;
+    }
+
+    #asideMenu {
+        width: 90%;
+        padding-right: 50%;
+        padding-left: 50%;
+        padding-bottom: 20px;
+        padding-top: 20px;
+
+        /* Pour annuler la limitation de mainContainerCommun, je pense néanmoins que ce n'est pas une façon très propre de le faire */
+        height: 850px;
+    }
+
+    #asideTitle {
+        width: 100%;
+    }
+
+    .mobileFontGrow {
+        font-size: 1.4em;
+    }
+
+    .starAside {
+        font-size: 1.3em;
+    }
+
+    .asidePictureText {
+        padding-left: 20px;
+    }
+
+    .asidePictureBox {
+    /** Sinon les images se déforment, pourquoi ?  (cf .asidePictureBox desktopVersion) ! **/
+    min-width: 200px;
+    max-width: 200px; 
+    }
+
+    .asidePictureCard {
+        height: 200px;
+    }
+
+    #moreContent {
+        display: none;
+    }
+
+    #activityPictureMenu {
+        flex-direction: column;
+        height:max-content;
+
+        gap: 15px;
+
+        /*Permet notamment d'ajouter les ombres aux 100% de height d'acitivyMenu ! */
+        margin: 10px;
+    }
+
+    #activityMenu {
+        width: 90%;
+        height: 100%;
+    }
+
+    .hostingTitle {
+        font-size: 2em;
+        margin-left: 0px;
+    }
+    
+    .activityCard  {
+        width: 90%;
+        height: 300px;
+    
+        overflow: hidden;
+    }
+
+    .activityPictureBox {
+        box-sizing: border-box;
+        width: 100%;
+        height: 240px;
+        border-radius: 20px 20px 0px 0px;
+        overflow: hidden;
+    }
+    
+    .activityPicture {
+        object-fit:cover;
+        width: 100%;
+        height: 100%;
+    }
+
+    #fortPomegues {
+        /* Solution de "triche" car la classe "activityPicture" ne fonctionne pas sur CETTE image en particulier (résolution ?)... */
+        /* Résultat identique niveau disposition et résistance à l'étirement du site MAIS l'image se retrouve mal cadrée... */
+        width: 600px;
+        height: 280px;
+    }
+
+    #footerMenu {
+        background-color: #F2F2F2;
+        flex-direction: column;
+    
+        min-width: fit-content;
+        width: 100%;
+        height: fit-content;
+
+        padding-left: 50px;
+        gap: 20px;
+    }
+
+    #activityTeaser {
+        width: 30%;
+    }
+        
+}
+
+/* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    - - -                                                           ! ZONE TEST !                                                          - - - 
+
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
+
+/* J'ai réussi à selectionner les étoiles mais ... Je ne parviens pas à les aligner vers le bas... */
+/*.flexEnd div:nth-child(3) {
+    align-self: flex-end;
+    justify-self: flex-end;
+    background: #8ebf42;
+ }*/
+

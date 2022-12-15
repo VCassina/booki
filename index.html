@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html>
+    
+    <head>
+        <script src="https://kit.fontawesome.com/4925cffcbc.js" crossorigin="anonymous"></script>
+        <meta charset="utf-8">
+        <title>Booki</title>
+        <link href="Css/style.css" rel="stylesheet">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@500&display=swap" rel="stylesheet"> 
+    </head>
+
+    
+	<body>
+        <header class="flexHorizontal flexSpaceBetween" id="headerMenu">                                                                                        <!-- HEADER -->          
+            <img id="bookiLogo" src="Images\Logo\Booki.png" alt="Logo Booki">                                                                   <!-- LOGO BOOKI -->   
+            <nav class="flexHorizontal flexSpaceBetween" id="navMenu">                                                                          <!-- MENU NAV -->
+                    <a class="textNav paddingLowLateral mobileFontGrow" href="#hostingMenu">Hébergements</a>
+                    <a class="textNav paddingLowLateral mobileFontGrow" href="#activityMenu">Activités</a>
+            </nav>
+        </header>
+
+        <section class="paragrapheDrop">   
+            <div class="textNoFullWidht" id="formTrailerText">                                                                                                                               <!-- MOTEUR DE RECHERCHE / FORMULAIRE --> 
+                <h1>Trouvez votre hebergement pour des vacances de rêve</h1>
+                <p>En plein centre-ville ou en pleine nature</p>
+            </div> 
+
+            <form method="get" action="">                                                                                                       <!-- FORMULAIRE (en CheckBox !) -->
+                <fieldset class="flexHorizontal" id="searchingMenu">
+                   <i class="researchIcone fa-solid fa-location-dot"></i>
+                   <label for="research"><input class="researchInput researchTextSize" placeholder="Marseille, France"></label>
+                   <label>  
+                        <button type="submit" class="researchButton researchTextSize textWhite">
+                            <i class="fa-solid fa-magnifying-glass"></i>
+                            <p>Rechercher</p>
+                        </button>
+                   </label>
+                </fieldset>
+
+                <fieldset class="flexHorizontal flexGap mobileFontGrow" id="filterMenu">                <!-- FILTRES !-->
+                    <h3>Filtres</h3>
+                    <div class="flexHorizontal flexWrap flexGap">
+                        <label class="customCheckbox flexHorizontal filterButton flexLowGap paddingLowLateral">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-money-bill-wave iconeBlue filterChecked"></i>
+                            <p>Économique</p>
+                        </label>
+
+                        <label class="customCheckbox flexHorizontal filterButton flexLowGap paddingLowLateral">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-person iconeBlue filterChecked"></i>
+                            <p>Familial</p>
+                        </label>
+
+                        <label class="customCheckbox flexHorizontal filterButton flexLowGap paddingLowLateral">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-heart iconeBlue filterChecked"></i>
+                            <p>Romantique</p>
+                        </label>
+
+                        <label class="customCheckbox flexHorizontal filterButton flexLowGap paddingLowLateral">
+                            <input type="checkbox">
+                            <i class="fa-solid fa-dog iconeBlue filterChecked"></i>
+                            <p>Animaux autorisés</p>
+                        </label>
+                    </div>
+                </fieldset>
+            </form>
+
+            <section>                                                                                                                  <!-- ANNOTATION [i] -->
+                <div class="flexHorizontal mobileFontGrow" id="postFilterText">                                            
+                    <i class="fa-solid fa-info iconeInfo iconeBlue"></i>
+                    <p>Plus de 500 logements sont disponibles dans cette ville.</p>
+                </div>
+            </section>   
+        </section>  
+
+        <main class="flexHorizontal flexSpaceBetween flexMiddleGap" id="mainMenu">                                                                                          <!-- HOSTING -->
+            <section class="flexVertical flexStart mainContainerCommun" id="hostingMenu">
+                <h1 class="hostingTitle">Hebergements à Marseille</h1> 
+                <div class="flexHorizontal flexWrap justifyContent">     
+
+                    <div class="flexVertical hostingPictureCard cardShadowWhite flexStart">
+                        <div class="hostingPictureBox">
+                            <a href="index.html"><img src="Images/Hebergements/4_small/marcus-loke-WQJvWU_HZFo-unsplash.jpg" class="hostingPicture" alt="chambre d'hôtel auberge la Cannebière Marseille"></a>
+                        </div>
+                        <div class="hostingPictureText mobileFontGrow">
+                            <a href="index.html"><h1 class="lowEMTitle">Auberge La Cannebière</h1></a>
+                            <p>nuit à partir de 25€</p>
+                            <div>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flexVertical hostingPictureCard cardShadowWhite flexStart">
+                        <div class="hostingPictureBox">
+                            <a href="index.html"><img src="Images/Hebergements/4_small/fred-kleber-gTbaxaVLvsg-unsplash.jpg" class="hostingPicture" alt="chambre d'hôtel Chez Amina Marseille"></a>
+                        </div>
+                        <div class="hostingPictureText mobileFontGrow">
+                            <a href="index.html"><h1 class="lowEMTitle">Hôtel du port</h1></a>
+                            <p>nuit à partir de 52€</p>
+                            <div>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flexVertical hostingPictureCard cardShadowWhite flexStart">
+                        <div class="hostingPictureBox">
+                            <a href="index.html"><img src="Images/Hebergements/4_small/reisetopia-B8WIgxA_PFU-unsplash.jpg" class="hostingPicture" alt="chambre d'hôtel hôtel les mouettes Marseille"></a>
+                        </div>
+                        <div class="hostingPictureText mobileFontGrow">
+                            <a href="index.html"><h1 class="lowEMTitle">Hôtel Les Mouettes</h1></a>
+                            <p>nuit à partir de 76€</p>
+                            <div>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flexVertical hostingPictureCard cardShadowWhite flexStart">
+                        <div class="hostingPictureBox">
+                            <a href="index.html"><img src="Images/Hebergements/4_small/annie-spratt-Eg1qcIitAuA-unsplash.jpg" class="hostingPicture" alt="chambre d'hôtel hôtel de la mer Marseille"></a>
+                        </div>
+                        <div class="hostingPictureText mobileFontGrow">
+                            <a href="index.html"><h1 class="lowEMTitle">Hôtel de la mer</h1></a>
+                            <p>nuit à partir de 46€</p>
+                            <div>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="flexVertical hostingPictureCard cardShadowWhite flexStart">
+                        <div class="hostingPictureBox">
+                            <a href="index.html"><img src="Images/Hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg" class="hostingPicture" alt="chambre d'hôtel auberge du panier Marseille"></a>
+                        </div>
+                        <div class="hostingPictureText mobileFontGrow">
+                            <a href="index.html"><h1 class="lowEMTitle">Auberge Du Panier</h1></a>
+                            <p>nuit à partir de 23€</p>
+                            <div>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flexVertical hostingPictureCard cardShadowWhite flexStart cardShadowWhite">
+                        <div class="hostingPictureBox">
+                            <a href="index.html"><img src="Images/Hebergements/4_small/febrian-zakaria-M6S1WvfW68A-unsplash.jpg" class="hostingPicture" alt="chambre d'hôtel Chez Amina Marseille"></a>
+                        </div>
+                        <div class="hostingPictureText mobileFontGrow">
+                            <a href="index.html"><h1 class="lowEMTitle">Hôtel Chez Amina</h1></a>
+                            <p>nuit à partir de 96€</p>
+                            <div>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <a href="index.html" id="moreContent" class="hostingTitle"><h2>Afficher plus</h2></a>
+            </section>        
+            
+            <aside class="flexVertical flexStart mainContainerCommun" id="asideMenu">                                                                                       <!-- ASIDE --> 
+
+                <div class="flexHorizontal flexSpaceBetween mobileFontGrow" id="asideTitle">                                                                         <!-- TITRE + ICONE -->
+                    <h1>Les plus populaires</h1>
+                    <i class="fa-solid fa-chart-line iconeBlue" id="chartLogo"></i>
+                </div>                                                                                                  
+
+                <div class="flexVertical flexStart flexVerticalGap">
+
+                    <!-- Le flexStart ici n'est pas en trop, il "limite" la déformation de l'Aside _ 
+                        _ quand un "ctlr + scroll" est fait sur les principaux navigateurs WEB. -->
+                    <div class="flexHorizontal flexStart asidePictureCard cardShadowWhite">                                                                             <!-- POPULAR -->
+                        <div class="asidePictureBox">
+                            <a href="index.html"><img src="Images/Hebergements/4_small/emile-guillemot-Bj_rcSC5XfE-unsplash.jpg" class="asidePicture" alt="chambre d'hôtel hôtel le soleil du matin"></a>
+                        </div>
+                        <div class="asidePictureText flexStart flexVertical flexSpaceBetween">
+                            <div class="textAsideCard mobileFontGrow">
+                                <a href="index.html"><h1 class="lowEMTitle">Hôtel Le soleil du matin</h1></a>
+                                <p>nuit à partir de 128€</p>
+                            </div>
+                            <div class="starAside">
+                                    <i class="fa-solid fa-star iconeBlue"></i>
+                                    <i class="fa-solid fa-star iconeBlue"></i>
+                                    <i class="fa-solid fa-star iconeBlue"></i>
+                                    <i class="fa-solid fa-star iconeBlue"></i>
+                            </div>
+                        </div>
+                    </div>
+                        
+                    <div class="flexHorizontal flexStart asidePictureCard cardShadowWhite">  
+                        <div class="asidePictureBox">                                                                      
+                            <a href="index.html"><img src="Images/Hebergements/4_small/aw-creative-VGs8z60yT2c-unsplash.jpg" class="asidePicture" alt="Chambre d'hôtel hôtel Au coeur de l'eau Marseille"></a>
+                        </div> 
+                        <div class="asidePictureText flexStart flexVertical flexSpaceBetween">
+                            <div class="textAsideCard mobileFontGrow">
+                                <a href="index.html"><h1 class="lowEMTitle">Chambres d’hôtes Au cœur de l’eau</h1></a>
+                                <p>nuit à partir de 71€</p>
+                            </div>
+                            <div class="starAside">
+                                    <i class="fa-solid fa-star iconeBlue"></i>
+                                    <i class="fa-solid fa-star iconeBlue"></i>
+                                    <i class="fa-solid fa-star iconeBlue"></i>
+                                    <i class="fa-solid fa-star iconeBlue"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="flexHorizontal flexStart asidePictureCard cardShadowWhite">  
+                        <div class="asidePictureBox">                                                                            
+                            <a href="index.html"><img src="Images/Hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg" class="asidePicture" alt="Chambre d'hôtel hôtel Bleu et Blanc Marseille"></a>
+                        </div>
+                        <div class="asidePictureText flexStart flexVertical flexSpaceBetween">
+                            <div class="textAsideCard mobileFontGrow">
+                                <a href="index.html"><h1 class="lowEMTitle">Hôtel Bleu et Blanc</h1></a>
+                                <p>nuit à partir de 68€</p>
+                            </div>
+                            <div class="starAside">
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                                <i class="fa-solid fa-star iconeBlue"></i>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>  
+            </aside>
+        </main>
+
+        <article class="flexVertical flexStart mobileFontGrow" id="activityMenu">                                                                        <!-- ACTIVITIES -->
+            <h1 id="activityTeaser">Activités à Marseille </h1>
+            <section  class="flexHorizontal flexSpaceBetween" id="activityPictureMenu">
+                <div class="flexVertical activityCard cardShadowWhite flexStart">
+
+                    <div class="activityPictureBox">
+                        <a href="index.html"><img src="Images/Activites/2_large/reno-laithienne-QUgJhdY5Fyk-unsplash.jpg" class="activityPicture" alt="Vieux-Port de Marseille"></a>
+                    </div>
+                    <a href="index.html"><h3 class="activityText">Vieux-Port</h3></a>
+                </div>
+
+                <!-- Je ne comprends pas pourquoi je ne parviens pas à produire ceci sur CETTE image précisement (qualité ? Dimension ? Cela touche à la limite de objet-fit ?) ! -->
+                <div class="flexVertical activityCard cardShadowWhite flexStart">
+                    <div class="activityPictureBox">
+                        <a href="index.html"><img src="Images/Activites/2_large/paul-hermann-QFTrLdQIRhI-unsplash.jpg" class="activityPicture" id="fortPomegues" alt="Fort de Pomègues Marseille"></a>
+                    </div>
+                    <a href="index.html"><h3 class="activityText">Fort de Pomègues</h3></a>
+                </div>
+
+                <div class="flexVertical activityCard cardShadowWhite flexStart">
+                    <div class="activityPictureBox">
+                        <a href="index.html"><img src="Images/Activites/2_large/kilyan-sockalingum-NR8-cBCN3aI-unsplash.jpg" class="activityPicture" alt="Parc national des Calanques Marseille"></a>
+                    </div>
+                    <a href="index.html"><h3 class="activityText">Parc national des Calanques</h3></a>
+                </div>
+                
+                <div class="flexVertical activityCard cardShadowWhite flexStart">
+                    <div class="activityPictureBox">
+                        <a href="index.html"><img src="Images/Activites/2_large/florian-wehde-xW9e8gdotxI-unsplash.jpg" class="activityPicture" alt="Notre Notre de la Garde Marseille"></a>
+                    </div>
+                    <a href="index.html"><h3 class="activityText">Notre-Dame-de-la-Garde</h3></a>
+                </div>
+            </section>
+        </article>
+
+        <footer>
+            <div class="flexHorizontal flexSpaceAround" id="footerMenu">
+                <div class="flexVertical flexStart footerText"><a href="index.html"><h2>À propos</h2></a>
+                    <a href="index.html"><p>Fonctionnement du site</p></a>
+                    <a href="index.html"><p>Conditions générales</p></a>
+                    <a href="index.html"><p>Données et confidentialité</p></a>
+                </div>
+
+                <div class="flexVertical flexStart footerText"><a href="index.html"><h2>Nos hébergements</h2></a>
+                    <a href="index.html"><p>Charte qualité</p></a>
+                    <a href="index.html"><p>Proposer votre hôtel</p></a>
+                </div>
+
+                <div class="flexVertical flexStart footerText"><a href="index.html"><h2>Assistance</h2></a>
+                    <a href="index.html"><p>Centre d’aide</p></a>
+                    <a href="index.html"><p>Nous contacter</p></a>
+                </div>
+            </div>
+        </footer>
+	</body>
+</html>
