@@ -286,8 +286,8 @@ fieldset {
 
 .activityCard  {
     box-sizing: border-box;
-    width: 20%;
-    height: 440px;
+    width: 23%;
+    height: 450px;
 
     overflow: hidden;
 }
@@ -332,6 +332,10 @@ fieldset {
     display: none;
  }
 
+.smallPicture {
+    display: none;
+}
+
 /** ID - Ajustements ponctuels et éléments principaux ! **/
 
 #bookiLogo {
@@ -348,7 +352,7 @@ fieldset {
 }
 
 #hostingMenu {
-    min-width: 880px;
+    min-width: 860px;
     width: 65%;
 }
 
@@ -387,7 +391,6 @@ fieldset {
 #footerMenu {
     background-color: #F2F2F2;
 
-    min-width: 1337px;
     width: 100%;
     max-width: 1920px;
     
@@ -403,6 +406,10 @@ fieldset {
     /* Résultat identique niveau disposition et résistance à l'étirement du site MAIS l'image se retrouve mal cadrée... */
     width: 600px;
     height: 380px;
+}
+
+#filterMenu {
+    align-items: flex-start;
 }
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
@@ -503,7 +510,6 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
     #filterMenu {
         flex-direction: column;
-        align-items: flex-start;
     }
 
     .iconeInfo {
@@ -624,6 +630,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
     #fortPomegues {
         /* Solution de "triche" car la classe "activityPicture" ne fonctionne pas sur CETTE image en particulier (résolution ?)... */
         /* Résultat identique niveau disposition et résistance à l'étirement du site MAIS l'image se retrouve mal cadrée... */
+        /* La logique serait de redimensionner l'image mais je pars du principe que cela est voulu... */
         width: 600px;
         height: 280px;
     }
@@ -632,18 +639,112 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         background-color: #F2F2F2;
         flex-direction: column;
     
-        min-width: fit-content;
         width: 100%;
         height: fit-content;
 
-        padding-left: 50px;
+        padding-left: 20%;
         gap: 20px;
+
+        position: relative;
+        right: 30px;
     }
 
     #activityTeaser {
         width: 30%;
     }
-        
+}
+
+/* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+    - - -                                                          !! QUERY TABLETTE !!                                                         - - - 
+                                                                
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
+
+
+@media screen and (min-width:768px) and (max-width:992px) {
+    #mainMenu {
+        flex-direction: column;
+    }
+    
+    #asideCardMenu {
+        flex-direction: row;
+        gap: 15px;
+    }
+
+    #asideMenu {
+        width: 100%;
+    }
+    
+    .mainContainerCommun {
+        height: fit-content;
+    }
+
+    .asidePictureCard {
+        width: 33%;
+        /* 3/4 de la height d'hostingPictureBox ! */
+        height: 187px;
+        font-size: 0.9em;
+    }
+
+    .asidePictureBox {
+        box-sizing: border-box;
+        min-width: 40%;
+        max-width: 40%;
+    }
+
+    #asideTitle {
+        width: 100%;
+    }
+
+    .textNav:hover {
+        color: #0065FC;
+        border-top: none;
+    }
+    
+    .mainContainerCommun {
+        width: 90%;
+    }
+
+    #hostingMenu {
+        min-width: none;
+        width: 100%;
+    }
+
+    .textAsideCard {
+        line-height: 1.3em;
+    }
+    
+    .starAside {
+        font-size: 1.1em;
+    }
+
+    .activityCard  {
+        box-sizing: border-box;
+        height: 320px;
+        overflow: hidden;
+    }
+
+    .activityPictureBox {
+        box-sizing: border-box;
+        width: 100%;
+        height: 240px;
+        border-radius: 20px 20px 0px 0px;
+        overflow: hidden;
+    }
+
+    #activityMenu {
+        height: auto;
+        width: 100%;
+        margin: 0px;
+    }
+
+    .activityPicture {
+        border-radius: 20px 20px 0px 0px;
+    
+        object-fit:cover;
+        width: 100%;
+        min-height: 100%;
+    }
 }
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
