@@ -38,7 +38,7 @@ fieldset {
     align-items: center;
 }
 
-.flexSpaceBetween {
+.spaceBetween {
     justify-content: space-between;
 }
 
@@ -152,8 +152,17 @@ fieldset {
     color: #0065FC;
 }
 
+.iconeGrey {
+    color: #F2F2F2;
+}
+
+.fontBold {
+    font-weight: bold;
+}
+
+
 .paragrapheDrop {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
 }
 
 /** Masque la "box" du checkbox ! **/
@@ -164,6 +173,10 @@ fieldset {
 /** Colore l'icone une fois checked ! **/
 .customCheckbox input[type="checkbox"]:checked ~ .filterChecked {
     color: indigo;
+}
+
+.customCheckbox:hover {
+    background-color: #F2F2F2;
 }
 
 .filterButton {
@@ -177,7 +190,7 @@ fieldset {
     margin-top: 10px;
 }
 
-.iconeInfo {
+#iconeInfo {
     text-align: center; 
 
     width: 15px;
@@ -206,21 +219,18 @@ fieldset {
 
     height: 720px;
 
-    padding: 10px;
-    overflow: hidden;
+    padding: 10px 40px 10px 40px;
 }
 
 .hostingPictureCard {
     margin: 0px 15px 30px 15px;
 
     box-sizing: border-box;
-    width: 28%;
-    height: 250px;
+    height: 260px;
 }
 
 .hostingPictureText {
-    font-size: 0.9em;
-    line-height: 0.4;
+    line-height: 0.8;
     padding-left: 10px;
 
     position: relative;
@@ -245,8 +255,6 @@ fieldset {
 .asidePictureCard {
     box-sizing: border-box;
     width: 100%;
-    min-height: 33%;
-    max-height: 33%;
     align-self: center;
 }
 
@@ -254,50 +262,45 @@ fieldset {
     /** "rogne" l'image dans le cadre donné sans la déformer, correspond au rendu de la maquette ! **/
     object-fit:cover;
     width: 100%;
-    height: 100%;
+    height: 155px;
 }
 
 .asidePictureBox {
     box-sizing: border-box;
 
-    /** Sinon les images se déforment, pourquoi ? **/
-    min-width: 140px;
-    width: 140px;
-    max-width: 140px;
-
-    height: 100%;
+    min-width: 30%;
+    max-width: 30%;
     border-radius: 20px 0px 0px 20px;
     overflow: hidden;
 }
 
 .asidePictureText {
-    line-height: 0.8;
+    line-height: 0.9;
     padding-left: 10px;
 
-    /** Les 2% restant sont alloué à starAside car le margin-auto n'a pas fonctionné !! **/
-    /** C'est une triche mais c'est également une façon au demeurant viable de faire parceque "responsive friendly". **/
-
-    height: 98%;
+    /* Dimension de l'asidePicture en heigh ! */
+    /* Cela permet le flexSpaceBetween et donc la répartition des étoiles vers le bas. */
+    min-height: 155px;
 }
 
-.hostingTitle {
-    margin-left: 30px;
+.activityCard {
+    width: fit-content;
+    height: 570px;
+    margin-bottom: 10px;
 }
 
-.activityCard  {
+.activityPictureBox {
     box-sizing: border-box;
-    width: 23%;
-    height: 450px;
-
+    width: 100%;
+    height: 500px;
     overflow: hidden;
+    border-radius: 20px 20px 0px 0px;
 }
 
 .activityPicture {
-    border-radius: 20px 20px 0px 0px;
-
-    object-fit:cover;
+    object-fit: cover;
     width: 100%;
-    height: 380px;
+    height: 600px;
 }
 
 .activityText {
@@ -326,6 +329,10 @@ fieldset {
 
  .starAside {
     align-self: start;
+
+    /* Pour l'esthétique ! */
+    position: relative;
+    bottom: 5px;
  }
 
 .fa-magnifying-glass {
@@ -344,16 +351,9 @@ fieldset {
 }
 
 #navMenu {
-    /* Commande magique pour que le contenu se préserve au grossissement (ctrl + scroll) ! */
-    max-width: fit-content;
     width: 15%;
     min-width: 300px;
     font-size: 1.2em;
-}
-
-#hostingMenu {
-    min-width: 860px;
-    width: 65%;
 }
 
 #moreContent {
@@ -363,8 +363,6 @@ fieldset {
 }
 
 #asideMenu {
-    min-width: 340px;
-    width: 28%;
     align-items: center;
 }
 
@@ -374,18 +372,22 @@ fieldset {
 
 #asideTitle {
     /* Dimension des asideCards ! */
-    width: 455px;
-    max-width: 100%;
+    width: 100%;
 }
 
-#activityMenu {
-    /** !! Hauteur comprenant le margin-top de décalage avec les hostingMenu/asideMenu !! */
-    height: 560px;
+#activityPictureMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-gap: 40px;
+    justify-items: center;
 
-    margin: 50px 70px 40px 50px;
-    gap: 15px;
-    
+    width: fit-content;
     overflow: hidden;
+}
+
+#hostingTitle {
+    /* Correspondant au padding de la classe mainContainer -5 pour l'esthétique ! */
+    margin-left: 15px;
 }
 
 #footerMenu {
@@ -401,15 +403,31 @@ fieldset {
     padding-top: 40px;
 }
 
-#fortPomegues {
-    /* Solution de "triche" car la classe "activityPicture" ne fonctionne pas sur CETTE image en particulier (résolution ?)... */
-    /* Résultat identique niveau disposition et résistance à l'étirement du site MAIS l'image se retrouve mal cadrée... */
-    width: 600px;
-    height: 380px;
-}
-
 #filterMenu {
     align-items: flex-start;
+}
+
+#mainMenu {
+    display: grid;
+    grid-template-columns: 8fr 4fr;
+    gap: 20px;
+}
+
+#hostingCardMenu {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;   
+    align-items: center;
+}
+
+#activityMenu {
+    margin-bottom: 60px;
+    margin-top: 40px;
+    padding-bottom: 10px;
+}
+
+#postFilterText {
+    gap: 10px;
 }
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
@@ -444,7 +462,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
     }
 
     #navMenu {
-        min-width: 100%;
+        width: 100%;
     }
 
     #formTrailerText {
@@ -503,8 +521,6 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
     }
 
      #searchingMenu {
-        width: 90%;
-        justify-content: center;
         font-size: 2em;
     }
 
@@ -512,88 +528,47 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         flex-direction: column;
     }
 
-    .iconeInfo {
-        text-align: center;
-    
-        width: 22px;
-        height: 22px;
-
-        padding-right: 5px;
+    #iconeInfo {
+        font-size: 1.2em;
+        padding: 0 10px 15px 10px;
     }
     
     #mainMenu {
+        display: flex;
         flex-direction: column-reverse;
+        gap: 20px;
+        max-height: none;
     }
 
     #hostingMenu {
-        flex-direction: column;
-        min-width: fit-content;
         height: auto;
-        padding-bottom: 20px;
-        background-color: #FFFFFF;
-        width: 90%;
+    }
+
+    #hostingCardMenu {
+        display: flex;
+        flex-direction: column;
+        min-width: 100%;
     }
 
     .hostingPictureCard {
         width: 100%;
-
-        /* Leger étirement voué à acceuillir le mobileFontGrow du text ! */
-        height: 330px;
-    }
-
-    .hostingPictureBox {
-        height: 200px;
+        height: 300px;
     }
 
     #asideMenu {
-        width: 90%;
-        padding-right: 50%;
-        padding-left: 50%;
-        padding-bottom: 20px;
-        padding-top: 20px;
-
-        /* Pour annuler la limitation de mainContainerCommun, je pense néanmoins que ce n'est pas une façon très propre de le faire */
-        height: 850px;
-    }
-
-    #asideTitle {
-        width: 100%;
+        margin-top: 40px;
     }
 
     .mobileFontGrow {
-        font-size: 1.4em;
-    }
-
-    .starAside {
-        font-size: 1.3em;
+        font-size: 1.2em;
     }
 
     .asidePictureText {
         padding-left: 20px;
     }
 
-    .asidePictureBox {
-    /** Sinon les images se déforment, pourquoi ?  (cf .asidePictureBox desktopVersion) ! **/
-    min-width: 200px;
-    max-width: 200px; 
-    }
-
-    .asidePictureCard {
-        height: 200px;
-    }
-
     #moreContent {
         display: none;
-    }
-
-    #activityPictureMenu {
-        flex-direction: column;
-        height:max-content;
-
-        gap: 15px;
-
-        /*Permet notamment d'ajouter les ombres aux 100% de height d'acitivyMenu ! */
-        margin: 10px;
     }
 
     #activityMenu {
@@ -601,38 +576,9 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         height: 100%;
     }
 
-    .hostingTitle {
+    #hostingTitle {
         font-size: 2em;
         margin-left: 0px;
-    }
-    
-    .activityCard  {
-        width: 90%;
-        height: 300px;
-    
-        overflow: hidden;
-    }
-
-    .activityPictureBox {
-        box-sizing: border-box;
-        width: 100%;
-        height: 240px;
-        border-radius: 20px 20px 0px 0px;
-        overflow: hidden;
-    }
-    
-    .activityPicture {
-        object-fit:cover;
-        width: 100%;
-        height: 100%;
-    }
-
-    #fortPomegues {
-        /* Solution de "triche" car la classe "activityPicture" ne fonctionne pas sur CETTE image en particulier (résolution ?)... */
-        /* Résultat identique niveau disposition et résistance à l'étirement du site MAIS l'image se retrouve mal cadrée... */
-        /* La logique serait de redimensionner l'image mais je pars du principe que cela est voulu... */
-        width: 600px;
-        height: 280px;
     }
 
     #footerMenu {
@@ -652,6 +598,33 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
     #activityTeaser {
         width: 30%;
     }
+
+    #activityMenu {
+        width: 90%;
+    }
+    
+    #activityPictureMenu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        width: 100%;
+        padding: 40px;
+    }
+
+    .activityCard {
+        width: 100%;
+        height: 280px;
+    }
+
+    .activityPictureBox {
+        width: 100%;
+        height: 240px;
+    }
+
+    .activityPicture {
+        width: 100%;
+        height: 250px;
+    }
 }
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
@@ -663,7 +636,10 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
 @media screen and (min-width:768px) and (max-width:992px) {
     #mainMenu {
-        flex-direction: column;
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 2fr 0.5fr;
+        gap: 20px;
     }
     
     #asideCardMenu {
@@ -672,37 +648,30 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
     }
 
     #asideMenu {
-        width: 100%;
+        margin-top: 40px;
     }
     
     .mainContainerCommun {
+        max-width: fit-content;
         height: fit-content;
+        padding-bottom: 20px;
+        width: 90%;
     }
 
     .asidePictureCard {
         width: 33%;
-        /* 3/4 de la height d'hostingPictureBox ! */
-        height: 187px;
         font-size: 0.9em;
     }
 
     .asidePictureBox {
         box-sizing: border-box;
-        min-width: 40%;
-        max-width: 40%;
-    }
-
-    #asideTitle {
-        width: 100%;
+        min-width: 35%;
+        max-width: 35%;
     }
 
     .textNav:hover {
         color: #0065FC;
         border-top: none;
-    }
-    
-    .mainContainerCommun {
-        width: 90%;
     }
 
     #hostingMenu {
@@ -710,40 +679,18 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         width: 100%;
     }
 
-    .textAsideCard {
-        line-height: 1.3em;
-    }
-    
-    .starAside {
-        font-size: 1.1em;
-    }
-
     .activityCard  {
         box-sizing: border-box;
         height: 320px;
-        overflow: hidden;
-    }
-
-    .activityPictureBox {
-        box-sizing: border-box;
-        width: 100%;
-        height: 240px;
-        border-radius: 20px 20px 0px 0px;
-        overflow: hidden;
-    }
-
-    #activityMenu {
-        height: auto;
-        width: 100%;
-        margin: 0px;
     }
 
     .activityPicture {
-        border-radius: 20px 20px 0px 0px;
-    
-        object-fit:cover;
-        width: 100%;
-        min-height: 100%;
+        height: 300px;
+    }
+
+    .repositioningQueries {
+        position: relative;
+        bottom: 30px;
     }
 }
 
@@ -760,3 +707,6 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
     background: #8ebf42;
  }*/
 
+ /*.adaptFontWeight {
+    max-height: 70px;  
+ }*/
