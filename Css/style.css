@@ -1,7 +1,7 @@
 body {
 	font-family: 'Raleway', sans-serif;
 
-    /* Car, selon la maquette du designer, il faut que le footer vienne "taper" le bas de page ! */
+    /* Pas de margin bottom car, selon la maquette du designer, il faut que le footer vienne taper le bas de page ! */
     margin: 30px 30px 0 30px;
 }
 
@@ -26,6 +26,7 @@ fieldset {
 .textNoFullWidht {
     max-width: 80%;
 }
+
 .flexHorizontal {
     display: flex;
     flex-direction: row;
@@ -100,6 +101,8 @@ fieldset {
 
 .lowEMTitle {
     font-size: 1.25em;
+    line-height: normal;
+    margin: 0 0 -10px;
 }
 
 .researchTextSize {
@@ -200,12 +203,8 @@ fieldset {
     border-radius: 50%;
     padding: 5px 5px;
 
-    /** line-height : 0%; est une piste de solution pour centrer l'element mais - **/ 
-    /** Pour aller dans une valeur négative, j'ai trouvé ceci à la place : **/
     display: block; 
     line-height: 1.2;
-
-    /** Pour réduire ensuite la taille de l'icone, utiliser un font-size car c'est du texte pour la machine. **/
     font-size: 0.8em;
 }
 
@@ -213,44 +212,48 @@ fieldset {
     justify-content: center;
 }
 
-.mainContainerCommun {
-    border-radius: 25px;
-    background-color: #F2F2F2;
-
-    height: 720px;
-
-    padding: 10px 40px 10px 40px;
-}
-
 .hostingPictureCard {
-    margin: 0px 15px 30px 15px;
-
-    box-sizing: border-box;
-    height: 260px;
-}
-
-.hostingPictureText {
-    line-height: 0.8;
-    padding-left: 10px;
-
-    position: relative;
-    bottom: 5px;
-}
-
-.hostingPictureBox {
     box-sizing: border-box;
     width: 100%;
-    height: 180px;
-    border-radius: 20px 20px 0px 0px;
-    overflow: hidden;
+
+    /* Nombre magique !! Triche pour empêcher un "saut" hors de la card pour le text lorsqu'il est trop compacté...*/
+    min-width: 165px;
+    height: 250px;
+    align-self: center;
+    margin: 0px 0px 30px;
 }
 
 .hostingPicture {
-    /** "rogne" l'image dans le cadre donné sans la déformer, correspond au rendu de la maquette ! **/
+    /** Vient rogner l'image dans le cadre donné sans la déformer, correspond au rendu de la maquette ! **/
     object-fit:cover;
     width: 100%;
     height: 100%;
 }
+
+.hostingPictureBox {
+    box-sizing: border-box;
+
+    width: 100%;
+    min-height: 140px;
+    max-height: 140px;
+    border-radius: 20px 20px 0px 0px;
+    overflow: hidden;
+}
+
+.hostingPictureText {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+
+    width: auto;
+    height: 100px;
+
+    margin-top: 5px;
+    margin-bottom: 5px;
+
+    line-height: 0.5;
+    justify-content: space-between;
+  }
 
 .asidePictureCard {
     box-sizing: border-box;
@@ -259,7 +262,7 @@ fieldset {
 }
 
 .asidePicture {
-    /** "rogne" l'image dans le cadre donné sans la déformer, correspond au rendu de la maquette ! **/
+    /** Vient rogner l'image dans le cadre donné sans la déformer, correspond au rendu de la maquette ! **/
     object-fit:cover;
     width: 100%;
     height: 155px;
@@ -280,7 +283,7 @@ fieldset {
 
     /* Dimension de l'asidePicture en heigh ! */
     /* Cela permet le flexSpaceBetween et donc la répartition des étoiles vers le bas. */
-    min-height: 155px;
+    height: 155px;
 }
 
 .activityCard {
@@ -306,6 +309,11 @@ fieldset {
 .activityText {
     margin-left: 15px;
     font-size: 1em;
+}
+
+.textAsideCard {
+    line-height: 1.2;
+    margin-top: 10px;
 }
 
 .cardShadowWhite {
@@ -364,6 +372,12 @@ fieldset {
 
 #asideMenu {
     align-items: center;
+    border-radius: 25px;
+    background-color: #F2F2F2;
+
+    height: 720px;
+
+    padding: 10px 40px 10px 40px;
 }
 
 #chartLogo {
@@ -381,24 +395,26 @@ fieldset {
     grid-gap: 40px;
     justify-items: center;
 
+    /* Pour l'ombre ! */
+    padding: 10px;
+
     width: fit-content;
     overflow: hidden;
 }
 
 #hostingTitle {
-    /* Correspondant au padding de la classe mainContainer -5 pour l'esthétique ! */
+    /* Pour l'esthétique ! */
     margin-left: 15px;
 }
 
 #footerMenu {
     background-color: #F2F2F2;
 
-    width: 100%;
-    max-width: 1920px;
-    
+    width: 100%;    
     height: 200px;
 
-    /* Aligne les box en "haut" et décale cette hauteur de 50px vers le bas ! */
+    /* Aligne les box vers le haut et décale cette hauteur de 50px vers le bas ! */
+    /* Correspond au rendu maquette ! */
     align-items: baseline;
     padding-top: 40px;
 }
@@ -409,7 +425,7 @@ fieldset {
 
 #mainMenu {
     display: grid;
-    grid-template-columns: 8fr 4fr;
+    grid-template-columns: 12fr 6fr;
     gap: 20px;
 }
 
@@ -418,6 +434,7 @@ fieldset {
     grid-template-columns: 1fr 1fr 1fr;
     grid-template-rows: 1fr 1fr;   
     align-items: center;
+    gap: 15px;
 }
 
 #activityMenu {
@@ -430,13 +447,22 @@ fieldset {
     gap: 10px;
 }
 
+#hostingMenu {
+    border-radius: 25px;
+    background-color: #F2F2F2;
+
+    height: 720px;
+
+    padding: 10px 40px 10px 40px;
+}
+
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
     - - -                                                          !! QUERY MOBILE !!                                                         - - - 
                                                                 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
 
-/* Non plus rangé par catégorie (class/id) mais chronologiquement selon l'avancée du projet */
+/* Non plus rangé par catégorie (class/id) mais chronologiquement selon l'avancement du projet ! */
 
 @media screen and (max-width: 768px) {
 
@@ -474,7 +500,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         /* Retire la bordure du haut présente sur le Desktop ! */
         border: none;
 
-        /* Nouvelle bordure ! */
+        /* Nouvelle bordure pour mobile ! */
         color: #000000;
         border-bottom: solid transparent 2px #0065FC;
         width: 100%;
@@ -488,7 +514,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         color: #0065FC;
         border-bottom: solid 2px #0065FC;
 
-        /* Margin en rapport à celui de la classe du dessus pour empêcher le "saut" au survol ! */
+        /* Margin en rapport à celui de la classe éponyme  pour empêcher le "saut" au survol ! */
         margin-top: 30px;
     }
 
@@ -499,11 +525,10 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
      .researchIcone {
         /** Requis pour avoir une border autour du researchInput ! **/
         height: 60px;
-        width: 12.5%;
+        width: 80px;
      }
 
      .researchButton {
-        /* Il y avait un padding qui empêchait de centrer... */
         padding-right: 0px;
         padding-left: 0px;
         height: 61px;
@@ -528,11 +553,15 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         flex-direction: column;
     }
 
-    #iconeInfo {
-        font-size: 1.2em;
-        padding: 0 10px 15px 10px;
-    }
+    .iconeInfo {
+        text-align: center;
     
+        min-width: 22px;
+        min-height: 22px;
+
+        padding-right: 5px;
+    }
+
     #mainMenu {
         display: flex;
         flex-direction: column-reverse;
@@ -542,12 +571,14 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
     #hostingMenu {
         height: auto;
+        background-color: #FFFFFF;
+        width: 100%;
     }
 
     #hostingCardMenu {
         display: flex;
         flex-direction: column;
-        min-width: 100%;
+        width: 100%;
     }
 
     .hostingPictureCard {
@@ -555,8 +586,22 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         height: 300px;
     }
 
+    .hostingPictureBox {
+        min-height: 180px;
+    }
+
     #asideMenu {
-        margin-top: 40px;
+        background-color: #F2F2F2;
+        border-radius: 0%;
+        width: 100%;
+    }
+
+    .noMarginMobile {
+        margin: 0 -30px 0 -30px;
+    }
+
+    #asideCardMenu {
+        width: 100%;
     }
 
     .mobileFontGrow {
@@ -581,26 +626,13 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         margin-left: 0px;
     }
 
-    #footerMenu {
-        background-color: #F2F2F2;
-        flex-direction: column;
-    
-        width: 100%;
-        height: fit-content;
-
-        padding-left: 20%;
-        gap: 20px;
-
-        position: relative;
-        right: 30px;
-    }
-
     #activityTeaser {
-        width: 30%;
+        font-size: 2em;
+        width: 40%;
     }
 
     #activityMenu {
-        width: 90%;
+        width: 100%;
     }
     
     #activityPictureMenu {
@@ -608,7 +640,6 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr 1fr 1fr;
         width: 100%;
-        padding: 40px;
     }
 
     .activityCard {
@@ -625,6 +656,21 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         width: 100%;
         height: 250px;
     }
+
+    #footerMenu {
+        flex-direction: column;
+        width: 100%;
+        /* (padding-right = 2 x le margin du body) ! */
+        /* Triche ! */
+        padding-right: 60px;
+        padding-left: 20px;
+
+        height: fit-content;
+        gap: 20px;
+
+        background-color: #F2F2F2;
+    }
+
 }
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
@@ -633,8 +679,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
                                                                 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
 
-
-@media screen and (min-width:768px) and (max-width:992px) {
+@media screen and (min-width:769px) and (max-width:992px) {
     #mainMenu {
         display: grid;
         grid-template-columns: auto;
@@ -649,9 +694,6 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
     #asideMenu {
         margin-top: 40px;
-    }
-    
-    .mainContainerCommun {
         max-width: fit-content;
         height: fit-content;
         padding-bottom: 20px;
@@ -677,6 +719,9 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
     #hostingMenu {
         min-width: none;
         width: 100%;
+        max-width: fit-content;
+        height: fit-content;
+        padding-bottom: 20px;
     }
 
     .activityCard  {
@@ -700,13 +745,4 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
 _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
 
-/* J'ai réussi à selectionner les étoiles mais ... Je ne parviens pas à les aligner vers le bas... */
-/*.flexEnd div:nth-child(3) {
-    align-self: flex-end;
-    justify-self: flex-end;
-    background: #8ebf42;
- }*/
-
- /*.adaptFontWeight {
-    max-height: 70px;  
- }*/
+/* Ici était écrit du code temporaire... */
