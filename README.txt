@@ -1,7 +1,6 @@
-Update du 28/12/2022 !
+Update du 02/01/2023 !!
 
-J'ai corrigé les points abordés avec Thomas sur une autre version, il est maintenant temps de refaire le site au propre et c'est le code que je propose ici.
-Le HTML va rester blogalement le même mais le .css va être réinitialiser, tout simplement retapé de 0.
+Problème toujours présent concernant la balise <p> dans le bouton du formulaire.
+Soucis sur le before (border) toujours présent, je ne trouve pas de solution.
 
-L'idée est de faire quelque chose de BIEN PLUS propre et plus épuré, ayant énormement progressé depuis le début de ce projet.
-Je vais m'inspirer de la version d'avant pour certaines choses mais avec mes connaissances et ma méthodologie de maintenant.
+48h de blocage, j'ai besoin de faire autre chose, je m'attaquerais au projet 4 ces prochains jours.

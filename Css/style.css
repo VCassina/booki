@@ -79,10 +79,20 @@ header, #researchSection, #hostingMenu, aside, article, footer {
     content:'';
     position: absolute;
     background-color: #0065FC;
-    width: 200px;
+    /* Une pour chaque élement via ID : */
+    /*width: 200px;*/
     height: 2px;
     top: 0;
     visibility: hidden;
+}
+
+/* A defaut d'avoir pu trouver une instruction rendu relative la widht du before : */
+#leftNavBorder::before {
+    width: 140px;
+}
+
+#rightNavBorder::before {
+    width: 85px;
 }
 
 .textNav:hover::before {
@@ -411,7 +421,6 @@ header, #researchSection, #hostingMenu, aside, article, footer {
     margin-bottom: 60px;
     margin-top: 40px;
     padding-bottom: 10px;
-    background-color: #000000;
 }
 
 #activityPictureMenu {
@@ -614,12 +623,13 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 /* TOUT CE QUI CONCERNE LA BORDER NAV !!          */
 /* /!\ /!\ EN COURS DE DEVELOPPEMENT /!\ /!\      */
+/* VERSION MOBILE (modification) !!               */
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 
 
     #navMenu {
         width: 100%;
-        justify-content: space-evenly;
+        justify-content: space-around;
     }
 
     .textNav {
@@ -642,7 +652,12 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
     }
 
     #rightNavBorder::before {
+        width: 50%;
         left: 50%;
+    }
+
+    #leftNavBorder::before {
+        width: 50%;
     }
 
     .textNav:hover::before {
