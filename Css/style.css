@@ -23,11 +23,6 @@ input {
     padding-left: 20px;
 }
 
-input::placeholder {
-    color: #000000;
-    opacity: 0.8;
-}
-
 fieldset {
     border: none;
 }
@@ -58,7 +53,6 @@ header, #researchSection, #hostingMenu, aside, article, footer {
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 /* TOUT CE QUI CONCERNE LA BORDER NAV !!          */
-/* /!\ /!\ EN COURS DE DEVELOPPEMENT /!\ /!\      */
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 
 .textNav {
@@ -79,25 +73,23 @@ header, #researchSection, #hostingMenu, aside, article, footer {
     content:'';
     position: absolute;
     background-color: #0065FC;
-    /* Une pour chaque élement via ID : */
-    /*width: 200px;*/
     height: 2px;
     top: 0;
     visibility: hidden;
 }
 
-/* A defaut d'avoir pu trouver une instruction rendu relative la widht du before : */
-#leftNavBorder::before {
+.leftNavBorder::before {
     width: 140px;
 }
 
-#rightNavBorder::before {
+.rightNavBorder::before {
     width: 85px;
 }
 
 .textNav:hover::before {
     visibility: visible;
 } 
+
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 /* TOUT CE QUI CONCERNE LE MOTEUR DE RECHERCHE !! */
@@ -112,7 +104,7 @@ header, #researchSection, #hostingMenu, aside, article, footer {
 
 .researchIcone {
     height: 55px;
-    line-height: 60px;
+    line-height: 55px;
 
     border: 1px solid #F2F2F2;
     border-radius: 15px 0px 0px 15px;
@@ -160,6 +152,17 @@ header, #researchSection, #hostingMenu, aside, article, footer {
     display: none;
  }
 
+ button > span {
+    font-family: 'Raleway';
+    font-style: normal;
+    font-weight: 700;
+    text-align: center;
+ }
+
+ #formTrailerText > h2 {
+    font-weight: bold;
+ }
+
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 /* GESTION DES FLEX !!                            */
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
@@ -180,8 +183,12 @@ header, #researchSection, #hostingMenu, aside, article, footer {
     justify-content: space-between;
 }
 
-.flexSpaceAround {
+.spaceAround {
     justify-content: space-around;
+}
+
+.spaceEvenly {
+    justify-content: space-evenly;
 }
 
 .flexStart {
@@ -253,6 +260,10 @@ header, #researchSection, #hostingMenu, aside, article, footer {
 /* GESTION DES DETAILS !!                         */
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 
+.CardUpperText {
+    line-height: 2.5em;
+  }
+
 .justifyContent {
     justify-content: center;
 }
@@ -282,7 +293,7 @@ header, #researchSection, #hostingMenu, aside, article, footer {
 #mainMenu {
     display: grid;
     grid-template-columns: 12fr 6fr;
-    gap: 20px;
+    gap: 10px;
 }
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
@@ -345,7 +356,7 @@ header, #researchSection, #hostingMenu, aside, article, footer {
   #moreContent {
     font-weight: bolder;
     font-size: larger;
-    margin-top: 20px;
+    margin-top: 70px;
 }
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
@@ -382,6 +393,7 @@ header, #researchSection, #hostingMenu, aside, article, footer {
 
 .asidePicture {
     object-position: center center;
+    object-fit: cover;
     width: auto;
     height: 155px;
 }
@@ -396,17 +408,16 @@ header, #researchSection, #hostingMenu, aside, article, footer {
 }
 
 .asidePictureText {
-    line-height: 0.9;
     padding-left: 10px;
 
     /* Dimension de l'asidePicture en heigh ! */
-    /* Cela permet le flexSpaceBetween et donc la répartition des étoiles vers le bas. */
+    /* Cela permet le spaceBetween et donc la répartition des étoiles vers le bas. */
     height: 155px;
 }
 
 .textAsideCard {
-    line-height: 4em;
     margin-top: 10px;
+    line-height: 2.5em;
 }
 
 .starAside {
@@ -482,16 +493,18 @@ header, #researchSection, #hostingMenu, aside, article, footer {
 /* GESTION DU FOOTER !!                            */
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
 
+footer {
+    margin: 0;
+}
+
 #footerMenu {
     background-color: #F2F2F2;
-
-    width: 100%;    
     height: 200px;
 
     /* Aligne les box vers le haut et décale cette hauteur de 50px vers le bas ! */
     /* Correspond au rendu maquette ! */
     align-items: baseline;
-    padding-top: 40px;
+    padding: 50px 0px 50px 0px;
 }
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
@@ -596,7 +609,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         text-align: center;
     }
 
-    button p {
+    button > span {
         display: none;
     }
 
@@ -622,14 +635,13 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 /* TOUT CE QUI CONCERNE LA BORDER NAV !!          */
-/* /!\ /!\ EN COURS DE DEVELOPPEMENT /!\ /!\      */
 /* VERSION MOBILE (modification) !!               */
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 
 
     #navMenu {
         width: 100%;
-        justify-content: space-around;
+        justify-content: space-between;
     }
 
     .textNav {
@@ -648,16 +660,10 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         height: 0.25em;
         top: 10em;
         left: 0;
-        visibility: hidden; 
     }
 
-    #rightNavBorder::before {
-        width: 50%;
+    .rightNavBorder::before {
         left: 50%;
-    }
-
-    #leftNavBorder::before {
-        width: 50%;
     }
 
     .textNav:hover::before {
@@ -673,12 +679,26 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 /* VERSION MOBILE (modification)                  */
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 
+        
+    #searchingMenu {
+        width: 95%;
+    }
+
     .researchIcone {
-        font-size: x-large;
-     }
+        max-width: 2em;
+        min-width: 2em;
+    }
+
+    #researchInput {
+        width: 90%; 
+    }
 
      .researchButton {
-        width: 4em;
+        max-width: 3em;
+     }
+
+     .researchIcone {
+        font-size: x-large;
      }
 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
@@ -725,18 +745,25 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 
     #hostingMenu {
-        height: auto;
+        height: fit-content;
         background-color: #FFFFFF;
+        margin: 0;
     }
 
     #hostingCardMenu {
         display: flex;
         flex-direction: column;
         width: 100%;
+
+        
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr; 
+        grid-gap: 20px;
+        width: 100%;
     }
 
     .hostingPictureCard {
-        width: 100%;
         height: 280px;
     }
 
@@ -748,18 +775,23 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         font-size: xx-large;
     }
 
+    #moreContent {
+        display: none;
+    }
+
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 /* GESTION DES POPULARS / ASIDE !!                */
 /* VERSION MOBILE (modification) !!               */
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 
     #asideMenu {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr; 
+        grid-gap: 20px;
+        padding: 10px 40px 10px 40px;
         margin: 0;
         border-radius: 0;
-    }
-
-    #asideCardMenu {
-        margin: 1.5em;
     }
 
     .asidePictureText {
@@ -770,12 +802,15 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         width: 100%;
     }
 
-    #asideTitle {
-        /* Pas soucis d'esthétisme... */
-        width: 90%;
-        font-size: larger;
+    .textAsideCard {
+        line-height: 2em;
     }
 
+    #asideTitle {
+        width: 100%;
+        font-size: larger;
+    }
+    
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _*/
 /* GESTION DES ACTIVITY !!                        */
 /* VERSION MOBILE (modification) !!               */
@@ -786,6 +821,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
         background-color: #FFFFFF;
         border-radius: 25px;
         padding: 10px 40px 10px 40px;
+        margin: 50px 0;
     }
 
     #activityTeaser {
@@ -830,6 +866,7 @@ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
 
     footer {
         margin: 0;
+        padding: 0;
         background-color: #F2F2F2;
     }
 }
