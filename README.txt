@@ -14,7 +14,7 @@ A savoir :
 - L'espacement des textes du footer ont été modifié (du a la présence un margin sur les p).
 
 - L'indentation a été améliorée.
-- Les dimensions widht de la barre de recherche sont désormais en % afin de permettre une compatibilité avec la version mobile.
+- Les dimensions widht de la barre de recherche sont désormais en % afin de permettre une compatibilité avec les résolutions extrêmement basses.
 
 
 
