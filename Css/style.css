@@ -493,10 +493,6 @@ header, #researchSection, #hostingMenu, aside, article, footer {
 /* GESTION DU FOOTER !!                            */
 /* _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ */
 
-footer {
-    margin: 0;
-}
-
 #footerMenu {
     background-color: #F2F2F2;
     height: 200px;
